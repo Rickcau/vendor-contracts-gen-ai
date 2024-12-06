@@ -1,4 +1,4 @@
-# Scripts usedd for Indexing etc.
+# Scripts used for Indexing etc.
 
 ## Resume-Indexing.py
 This Python file has examples that we will make use for for this solution.
