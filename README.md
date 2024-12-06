@@ -35,11 +35,6 @@ python -m venv vendor-contracts-env
 .\vendor-contracts-env\Scripts\activate
 pip install -r requirements.txt
 ```
-#### VS Code Terminal Window
-Make sure you have 
-```
-python --version
-```
 
 ### Running notebooks
 If you don't have Jupyter set up, install the Jupter extension in VS Code.  We will leverage notebooks to demo various examples.
