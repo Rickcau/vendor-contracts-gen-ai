@@ -36,14 +36,14 @@ python -m venv vendor-contracts-env
 pip install -r requirements.txt
 ```
 
-### Running notebooks
-If you don't have Jupyter set up, install the Jupter extension in VS Code.  We will leverage notebooks to demo various examples.
-
 ### Collect all your resouce details from Azure
 * Naviagte to the Azure Portal and collect all the AI resource detatils for both AI Search and Azure OpenAI endpoints.
 
 ### Setting up .env variables
 Briefly going over how to set up environment variables. You will find an example .env file in the root folder `env.example` you need to rename that file
 to `.env` and make sure to see all the variables to point to your Azure Resources.
+
+### Running notebooks
+If you don't have Jupyter set up, install the Jupter extension in VS Code.  We will leverage notebooks to demo various examples.
 
 
