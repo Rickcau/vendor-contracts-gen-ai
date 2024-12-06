@@ -15,8 +15,10 @@ Please ensure you're using Python 3.11 or later.
 This version is required for optimal compatibility with LangGraph. If you're on an older version, 
 upgrading will ensure everything runs smoothly.
 
+Open a terminal window in VS Code and run the following command
+
 ```
-python3 --version
+python --version
 ```
 
 ### Clone repo
@@ -26,18 +28,18 @@ $ cd vendor-contracts-gen-ai
 ```
 
 ### Create an environment and install dependencies
-#### Mac/Linux/WSL
+#### From VS Code
+Open a terminal window and run the following commands.
+
 ```
-$ python3 -m venv vendor-contracts-env
-$ source vendor-contracts-env/bin/activate
-$ pip install -r requirements.txt
+python -m venv vendor-contracts-env
+.\vendor-contracts-env\Scripts\activate
+pip install -r requirements.txt
 ```
-#### Windows Powershell
+#### VS Code Terminal Window
+Make sure you have 
 ```
-PS> python3 -m vendor-contracts-env
-PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-PS> vendor-contracts-env\scripts\activate
-PS> pip install -r requirements.txt
+python --version
 ```
 
 ### Running notebooks
