@@ -11,3 +11,4 @@ azure-search-documents
 azure-ai-formrecognizer
 azure-ai-documentintelligence
 azure-storage-blob
+unstructured
