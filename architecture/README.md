@@ -14,7 +14,8 @@ Understanding the document structure for each document / vendor contract is extr
 
 ## AI Search Index Structure
 We will need to make some decisions on the common fields that should be included in the index beyond just the contact and the embeddings for the content.  Below is an example of the fields we may need to consider for the index.
-'''
+
+```
   document = {
                 "id": document_id,
                 "contractId": contract_id,
@@ -34,6 +35,7 @@ We will need to make some decisions on the common fields that should be included
                 "sourceFileName": fileName,
                 "searchVector": searchVector
             }
+<<<<<<< HEAD
 '''
 
 ## SQL Schema Example
@@ -64,3 +66,6 @@ When leveraging NL2SQL it's very important to have column descriptions for the s
 | **AmendmentNumber**      | The sequential number of the amendment or addendum to the contract.            |
 | **Notes**                | Any additional notes or comments about the contract.                           |
 | **Metadata**             | A JSON column to store unstructured or custom data extracted from the contract.|
+=======
+```
+>>>>>>> 5f311a27981cd39d9396e14746d60de4d6958ce9
