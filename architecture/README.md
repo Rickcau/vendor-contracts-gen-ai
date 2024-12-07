@@ -35,8 +35,7 @@ We will need to make some decisions on the common fields that should be included
                 "sourceFileName": fileName,
                 "searchVector": searchVector
             }
-<<<<<<< HEAD
-'''
+```
 
 ## SQL Schema Example
 
@@ -66,6 +65,3 @@ When leveraging NL2SQL it's very important to have column descriptions for the s
 | **AmendmentNumber**      | The sequential number of the amendment or addendum to the contract.            |
 | **Notes**                | Any additional notes or comments about the contract.                           |
 | **Metadata**             | A JSON column to store unstructured or custom data extracted from the contract.|
-=======
-```
->>>>>>> 5f311a27981cd39d9396e14746d60de4d6958ce9
