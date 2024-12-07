@@ -14,6 +14,7 @@ Understanding the document structure for each document / vendor contract is extr
 
 ## AI Search Index Structure
 We will need to make some decisions on the common fields that should be included in the index beyond just the contact and the embeddings for the content.  Below is an example of the fields we may need to consider for the index.
+
 '''
   document = {
                 "id": document_id,
