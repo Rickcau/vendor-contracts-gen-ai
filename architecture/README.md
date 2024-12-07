@@ -104,5 +104,9 @@ When leveraging NL2SQL it's very important to have column descriptions for the s
 ### Add column descriptions to table
 You can use the SQL Script in the Scripts->SQL folder to Add the Columns descriptions.  
 
+<<<<<<< HEAD
 [SQL Script to add column descriptions](./scripts/SQL/AddColumnDescriptions.sql)
 
+=======
+[SQL Script to add column descriptions](../scripts/SQL/AddColumnDescriptions.sql)
+>>>>>>> 488919ccef38c44324dbb92e0b57825a7470445c
