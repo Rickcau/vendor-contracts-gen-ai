@@ -106,6 +106,3 @@ You can use the SQL Script in the Scripts->SQL folder to Add the Columns descrip
 
 [SQL Script to add column descriptions](./scripts/SQL/AddColumnDescriptions.sql)
 
-=======
-[SQL Script to add column descriptions](../scripts/SQL/AddColumnDescriptions.sql)
->>>>>>> 488919ccef38c44324dbb92e0b57825a7470445c
