@@ -3,7 +3,7 @@
 ## Conceptual Architecture
 Below is a rendering of a conceptual architecture for this solution.
 
-!()[.\images\Vendor-Contracts-ChatBot.png]
+![Solution Architecture](./architecture/images/Vendor-Contracts-ChatBot.png)
 
 ## Considerations
 - Using a Hybrid approach, i.e. AI Search for embeddings and semantic searches and SQL for NL2SQL
