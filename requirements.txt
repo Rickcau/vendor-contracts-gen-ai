@@ -6,3 +6,8 @@ langchain-core
 langchain-openai
 notebook
 langgraph-cli
+azure-core
+azure-search-documents
+azure-ai-formrecognizer
+azure-ai-documentintelligence
+azure-storage-blob
