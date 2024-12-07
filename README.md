@@ -8,6 +8,29 @@ By simpliying access to the contract details, admendments and specific clauses, 
 
 ## Setup
 
+### Azure Resources
+The following resources need to be created in Azure.  We recommend deploying the resources to the same resource group to keep things simple.
+- Resource Group
+- Storage Account
+- Azure OpenAI Service with GPT4o model deployed
+  - text-embedding-ada-002 model needs to be deployed for embeddings
+- Azure SQL DB
+- Azure AI Search
+- 
+#### Grant users Contributor Role
+All of your developers will need contributor role to the resource group or their own resoucre group for testing and development.
+
+```
+Azure Portal:
+1. Go to the Resource Group
+2. Click "Access control (IAM)"
+3. Click "+ Add"
+4. Select "Add role assignment"
+5. Choose the role (Contributor or Owner)
+6. Select the users/groups to assign
+7. Click "Review + assign"
+```
+
 ### Python version
 
 Please ensure you're using Python 3.11 or later. 
