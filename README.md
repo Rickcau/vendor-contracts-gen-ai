@@ -35,12 +35,9 @@ python -m venv vendor-contracts-env
 .\vendor-contracts-env\Scripts\activate
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
 
 ### Running notebooks
 If you don't have Jupyter set up, install the Jupter extension in VS Code.  We will leverage notebooks to demo various examples.
-=======
->>>>>>> 3dd8aacbc46fe4e4739b712f3f0820c84545a09c
 
 ### Collect all your resouce details from Azure
 * Naviagte to the Azure Portal and collect all the AI resource detatils for both AI Search and Azure OpenAI endpoints.
