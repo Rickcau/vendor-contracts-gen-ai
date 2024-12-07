@@ -1,5 +1,10 @@
 # Solution Architecture and Approach
 
+## Conceptual Architecture
+Below is a rendering of a conceptual architecture for this solution.
+
+!()[.\images\Vendor-Contracts-ChatBot.png]
+
 ## Considerations
 - Using a Hybrid approach, i.e. AI Search for embeddings and semantic searches and SQL for NL2SQL
 - Considering that Addendums play an important role in fully understanding the agreement is very important
@@ -38,6 +43,37 @@ We will need to make some decisions on the common fields that should be included
 ```
 
 ## SQL Schema Example
+The schema below is a generic schema that should be usable for any contract type.  The purpose of this schema is to store contract details that should be generic to all contracts and amendments.  If can also be used to store amendments and the amendments would be related to the parent contract, which allows us to search for contract and amendments that are related.  For those contracts that have uncommon data, we can store that in the Metadata column which allows us to capture additional data without having to add a lot of columns that will not be common across contracts.
+
+We are adding comments as these will be used to create the column descriptions.
+
+```
+CREATE TABLE Contracts (
+    ContractID INT PRIMARY KEY COMMENT 'Unique identifier for each contract',
+    VendorName VARCHAR(255) NOT NULL COMMENT 'Name of the vendor or contractor involved in the agreement',
+    ClientName VARCHAR(255) NOT NULL COMMENT 'Name of the client or contracting entity',
+    ContractTitle VARCHAR(255) COMMENT 'A brief title describing the contract (e.g., "Service Agreement")',
+    ContractType VARCHAR(100) COMMENT 'Category or type of contract (e.g., NDA, SLA, Service Agreement)',
+    EffectiveDate DATE COMMENT 'The date when the contract becomes effective',
+    EndDate DATE COMMENT 'The expiration or termination date of the contract, if applicable',
+    SigningDate DATE COMMENT 'The date on which the contract was signed by all parties',
+    Status VARCHAR(50) COMMENT 'Current status of the contract (e.g., Active, Draft, Terminated)',
+    Compensation DECIMAL(15, 2) COMMENT 'The total financial value of the contract',
+    PaymentTerms TEXT COMMENT 'Payment terms, including frequency or milestones (e.g., "Net 30 days")',
+    Currency VARCHAR(10) COMMENT 'The currency used in the financial details (e.g., USD, EUR)',
+    ScopeOfWork TEXT COMMENT 'A summary of the scope or deliverables defined in the contract',
+    GoverningLaw VARCHAR(100) COMMENT 'The legal jurisdiction governing the contract',
+    TerminationClause TEXT COMMENT 'Key details about the termination conditions outlined in the contract',
+    ConfidentialityClause BOOLEAN COMMENT 'Indicates whether a confidentiality clause is included in the contract',
+    ParentContractID INT COMMENT 'The ID of the original contract if this is an amendment or addendum',
+    AmendmentNumber INT COMMENT 'The sequential number of the amendment or addendum to the contract',
+    Notes TEXT COMMENT 'Any additional notes or comments about the contract',
+    Metadata JSON COMMENT 'A JSON column to store unstructured or custom data extracted from the contract',
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Timestamp for when the record was created',
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last updated timestamp'
+);
+
+```
 
 ### Column Descriptions
 
@@ -65,3 +101,40 @@ When leveraging NL2SQL it's very important to have column descriptions for the s
 | **AmendmentNumber**      | The sequential number of the amendment or addendum to the contract.            |
 | **Notes**                | Any additional notes or comments about the contract.                           |
 | **Metadata**             | A JSON column to store unstructured or custom data extracted from the contract.|
+
+### Add column descriptions to table
+The below script will iterate over the columns 
+
+```
+DECLARE @tableName NVARCHAR(255) = 'Contracts';
+DECLARE @columnName NVARCHAR(255);
+DECLARE @columnDescription NVARCHAR(255);
+
+-- Cursor to iterate over each column in the table
+DECLARE column_cursor CURSOR FOR
+SELECT c.name, ep.value
+FROM sys.columns c
+JOIN sys.extended_properties ep ON ep.major_id = c.object_id AND ep.minor_id = c.column_id
+WHERE c.object_id = OBJECT_ID(@tableName) AND ep.name = 'MS_Description';
+
+OPEN column_cursor;
+FETCH NEXT FROM column_cursor INTO @columnName, @columnDescription;
+
+-- Loop through each column and add description (if missing)
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    IF @columnDescription IS NULL
+    BEGIN
+        EXEC sp_addextendedproperty 
+            @name = N'MS_Description',
+            @value = 'Description for column ' + @columnName,
+            @level0type = N'Schema', @level0name = N'dbo', 
+            @level1type = N'Table', @level1name = @tableName, 
+            @level2type = N'Column', @level2name = @columnName;
+    END
+
+    FETCH NEXT FROM column_cursor INTO @columnName, @columnDescription;
+END
+
+CLOSE column_cursor;
+DEALLOCATE column_cursor;
