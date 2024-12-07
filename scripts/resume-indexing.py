@@ -190,10 +190,6 @@ def get_creation_date(pdf_file):
 
 
 def create_index():
-
-   
-
-    
     #Check if index exists, return if so
     try:
         # Try to get the index
