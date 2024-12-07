@@ -16,7 +16,7 @@ The following resources need to be created in Azure.  We recommend deploying the
   - text-embedding-ada-002 model needs to be deployed for embeddings
 - Azure SQL DB
 - Azure AI Search
-- 
+
 #### Grant users Contributor Role
 All of your developers will need contributor role to the resource group or their own resoucre group for testing and development.
 
