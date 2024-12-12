@@ -26,11 +26,9 @@ from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient  
 from datetime import datetime
 import os  
-from dotenv import load_dotenv  
-from azure.core.credentials import AzureKeyCredential  
+from dotenv import load_dotenv   
 
 from openai import AzureOpenAI  
-import os
 from langchain_openai import AzureChatOpenAI
 import itertools
 
@@ -190,10 +188,6 @@ def get_creation_date(pdf_file):
 
 
 def create_index():
-
-   
-
-    
     #Check if index exists, return if so
     try:
         # Try to get the index

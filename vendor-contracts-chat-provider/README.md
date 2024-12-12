@@ -15,8 +15,6 @@ python --version
 
 ```
 
-
-
 ## Setup
 
 1. Clone repository
