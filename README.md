@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The goal of this solution is to develope an advanced Retrieval-Augmented Generation (RAG) ChatBot designed to assist users in accessing vendor contract inforamtion.  This ChatBot will identify and retrieve the specific contracts and amendments relevant to the user's query.  By focusing on pertinent documents, the ChatBot will provide precise answers based on the content of these documents.
+The goal of this solution is to develop an advanced Retrieval-Augmented Generation (RAG) ChatBot designed to assist users in accessing vendor contract information.  This ChatBot will identify and retrieve the specific contracts and amendments relevant to the user's query.  By focusing on pertinent documents, the ChatBot will provide precise answers based on the content of these documents.
 
-By simpliying access to the contract details, admendments and specific clauses, this tool aims to streamline the contract management and enhance user experiecne.  Users will receive quick, actionable inforamtion presented in a user-friendly format, making the retrieval process more efficent and intuitive.
+By simplifying access to the contract details, amendments and specific clauses, this tool aims to streamline the contract management and enhance user experience.  Users will receive quick, actionable information presented in a user-friendly format, making the retrieval process more efficient and intuitive.
 
 ## Setup
 
