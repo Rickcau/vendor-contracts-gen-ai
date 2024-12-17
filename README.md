@@ -21,26 +21,24 @@ python --version
 ```
 
 ### Clone repo
-```
-git clone https://github.com/rickcau/vendor-contracts-gen-ai.git
-$ cd vendor-contracts-gen-ai
-```
+    ```
+        git clone https://github.com/rickcau/vendor-contracts-gen-ai.git
+        $ cd vendor-contracts-gen-ai
+    ```
 
 ### Create an environment and install dependencies
 #### From VS Code
 Open a terminal window and run the following commands.
 
-```
-python -m venv vendor-contracts-env
-.\vendor-contracts-env\Scripts\activate
-pip install -r requirements.txt
-```
-<<<<<<< HEAD
+    ```
+        python -m venv vendor-contracts-env
+        .\vendor-contracts-env\Scripts\activate
+        pip install -r requirements.txt
+    ```
 
 ### Running notebooks
 If you don't have Jupyter set up, install the Jupter extension in VS Code.  We will leverage notebooks to demo various examples.
 =======
->>>>>>> 3dd8aacbc46fe4e4739b712f3f0820c84545a09c
 
 ### Collect all your resouce details from Azure
 * Naviagte to the Azure Portal and collect all the AI resource detatils for both AI Search and Azure OpenAI endpoints.
