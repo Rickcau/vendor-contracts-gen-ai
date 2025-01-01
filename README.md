@@ -1,5 +1,8 @@
 # Vendor Contracts GenAI Solution
 
+# LICENSE
+The [MIT License](./LICENSE) applies to all the solutions / projects / examples included in this repository.
+
 ## Introduction
 
 The goal of this solution is to develop an advanced Retrieval-Augmented Generation (RAG) ChatBot designed to assist users in accessing vendor contract information.  This ChatBot will identify and retrieve the specific contracts and amendments relevant to the user's query.  By focusing on pertinent documents, the ChatBot will provide precise answers based on the content of these documents.
