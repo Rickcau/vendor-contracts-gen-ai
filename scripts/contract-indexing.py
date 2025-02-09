@@ -129,7 +129,7 @@ and output certain info in valid JSON format. Here is what you should be extract
 
 #Examples#
 
-User: Rick Caudle
+User: Steve Smith
 CAREER SUMMARY
 Resourceful and detail-oriented general contractor with 5+ years of experience recruiting and coordinating labor across construction sites.
 Adept at obtaining permits, inspecting sites, ensuring building code compliance, offering cost estimates, and employing skilled labor.
