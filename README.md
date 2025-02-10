@@ -1,7 +1,13 @@
 # Vendor Contracts GenAI Solution
 
-# LICENSE
-The [MIT License](./LICENSE) applies to all the solutions / projects / examples included in this repository.
+## Licensing
+
+This project uses a dual license model:
+
+- **Commercial License**: Required for Azure-hosted production deployments
+- **MIT License**: Applies to open source use cases
+
+See [LICENSE.md](LICENSE.md) for details.
 
 ## Introduction
 
